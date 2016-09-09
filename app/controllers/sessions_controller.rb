@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-    redirect_to '/auth/github' # could be replaced with '/signin'
+    redirect_to '/auth/github' # could be replaced with '/signin' #'auth/github'
   end
 
   def create
