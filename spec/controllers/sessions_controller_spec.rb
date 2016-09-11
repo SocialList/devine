@@ -1,3 +1,4 @@
+require 'pry-debugger'
 describe SessionsController, :omniauth do
 
   before do
@@ -7,17 +8,18 @@ describe SessionsController, :omniauth do
   describe "#create" do
 
     it "creates a user" do
-      expect {post :create, provider: :twitter}.to change{ User.count }.by(1)
+      expect {post :create, provider: :github}.to change{ User.count }.by(1)
+      binding.pry
     end
 
     it "creates a session" do
       expect(session[:user_id]).to be_nil
-      post :create, provider: :twitter
+      post :create, provider: :github
       expect(session[:user_id]).not_to be_nil
     end
 
     it "redirects to the home page" do
-      post :create, provider: :twitter
+      post :create, provider: :github
       expect(response).to redirect_to root_url
     end
 
@@ -26,7 +28,7 @@ describe SessionsController, :omniauth do
   describe "#destroy" do
 
     before do
-      post :create, provider: :twitter
+      post :create, provider: :github
     end
 
     it "resets the session" do

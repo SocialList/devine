@@ -18,7 +18,7 @@ development:
   encoding: unicode
   database: devine_development
   pool:     5
-  username: devine
+  username:
   password:
   template: template0
 
@@ -46,7 +46,7 @@ test:
   encoding: unicode
   database: devine_test
   pool:     5
-  username: devine
+  username:
   password:
   template: template0
 
@@ -56,6 +56,6 @@ production:
   encoding: unicode
   database: devine_production
   pool:     5
-  username: devine
+  username: 
   password:
   template: template0

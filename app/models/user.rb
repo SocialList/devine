@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_one :github_profile
-  
+
   def self.create_with_omniauth(auth)
     new_user = create! do |user|
       user.provider = auth['provider']
