@@ -1,4 +1,3 @@
-require 'pry-debugger'
 describe SessionsController, :omniauth do
 
   before do
@@ -9,7 +8,6 @@ describe SessionsController, :omniauth do
 
     it "creates a user" do
       expect {post :create, provider: :github}.to change{ User.count }.by(1)
-      binding.pry
     end
 
     it "creates a session" do

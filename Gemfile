@@ -16,11 +16,9 @@ gem 'pg'
 group :development, :test do
   gem 'byebug'
   gem 'dotenv-rails'
-  gem 'pry-rails'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'debugger', '~> 1.6.8'
 end
 
 group :development do
@@ -29,6 +27,8 @@ group :development do
   gem 'better_errors'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 group :test do
