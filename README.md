@@ -1,48 +1,47 @@
-Devine
-================
+# Devine
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
-
-Rails Composer is supported by developers who purchase our RailsApps tutorials.
-
-Problems? Issues?
------------
-
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
-
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
-Ruby on Rails
--------------
-
-This application requires:
+## This application requires:
 
 - Ruby 2.3.1
-- Rails 4.2.7.1
+- Rails 4.2.7
+- Postgresql
 
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
+## Getting Started
 
-Getting Started
----------------
+_$ = command line_
 
-Documentation and Support
--------------------------
+- fork the repo
+- $ git clone git@github.com:_YourRepo_/devine.git
+- $ gem install bundler
+- $ bundle
+- $ rake db:create
+- $ rails s
+- go to <http://localhost:3000/>
+- Sign in with GitHub (Currently only available for GitHub users)
+- Send message, checkout other users account see recent issues you can help with
+- Or post a repo you need help on
+- Enjoy and keep on coding
 
-Issues
--------------
+## Documentation and Support
 
-Similar Projects
-----------------
+- If you would to look at our code or make a collaboration, just have a look at our gems if you want to know what documentation to use
 
-Contributing
-------------
+## Issues
 
-Credits
--------
+- If you have any issues just post them on to issues on the repo page at <https://github.com/SocialList/devine>
 
-License
--------
+## Contributing
+
+- Sal aka cyberplanner (founder)
+- Victor aka 6eff (main collaborator)
+- Giancarlo aka Procras (main collaborator)
+- Francesco aka Frunez (main collaborator)
+
+## Credits
+
+- Special thanks to Makers Academy and Roi for teaching us all the tools we needed to create this application
+- Thanks to Stack Overflow for helping us debug all our issues
+
+## License
+
+- All rights owned by founder and main collaborators
