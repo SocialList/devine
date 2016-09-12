@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/SocialList/devine.png?label=ready&title=Ready)](https://waffle.io/SocialList/devine)
 # Devine
 
 ## This application requires:
