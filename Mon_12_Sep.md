@@ -7,9 +7,9 @@
 
 ## What we plan to do next
 
+- Implement commentator
 - fix github tests
 - Implement mailboxer
-- Implement commentator
 - Implement Geocoder (maybe)
 
 ## what's stopping us
