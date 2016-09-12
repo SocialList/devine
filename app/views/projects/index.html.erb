@@ -1,9 +1,7 @@
 <div class="">
   <% @projects.each do |project| %>
     <div class="well">
-      <% @repo_info = Net::HTTP.get(URI.parse("https://api.github.com/repositories/#{project.repo_id}")) %>
-      <% info_hash = JSON.parse @repo_info.gsub('=>', ':') %>
-      <%= "Project's Name: " + info_hash['name'] %>
+      <%= "Project's Name: " + Octokit.repo(project.repo_id).name %>
       <p>
         <%= project.description %>
       </p>

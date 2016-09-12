@@ -1,12 +1,12 @@
 HTTP/1.1 200 OK
 Server: GitHub.com
-Date: Mon, 12 Sep 2016 16:40:19 GMT
+Date: Mon, 12 Sep 2016 19:55:26 GMT
 Content-Type: application/json; charset=utf-8
 Content-Length: 5070
 Status: 200 OK
 X-RateLimit-Limit: 60
-X-RateLimit-Remaining: 4
-X-RateLimit-Reset: 1473699452
+X-RateLimit-Remaining: 50
+X-RateLimit-Reset: 1473710357
 Cache-Control: public, max-age=60, s-maxage=60
 Vary: Accept
 ETag: "8fb622ace8396878f233734d574f4b21"
@@ -20,8 +20,8 @@ X-Content-Type-Options: nosniff
 X-Frame-Options: deny
 X-XSS-Protection: 1; mode=block
 Vary: Accept-Encoding
-X-Served-By: 626ed3a9050b8faa02ef5f3c540b508d
-X-GitHub-Request-Id: 4D66478A:3655:7E3E336:57D6DA73
+X-Served-By: bd82876e9bf04990f289ba22f246ee9b
+X-GitHub-Request-Id: B0C1C29C:07A7:CCC6384:57D7082E
 
 {
   "id": 66507460,
