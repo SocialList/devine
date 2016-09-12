@@ -3,6 +3,9 @@
 #   I want to sign in
 #   So I can visit protected areas of the site
 feature 'Sign in', :omniauth do
+  before(:each) do
+    OmniAuth.config.mock_auth[:github] = nil
+  end
 
   # Scenario: User can sign in with valid account
   #   Given I have a valid account
