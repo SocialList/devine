@@ -1,4 +1,5 @@
 [![Stories in Ready](https://badge.waffle.io/SocialList/devine.png?label=ready&title=Ready)](https://waffle.io/SocialList/devine)
+[![Build Status](https://travis-ci.org/SocialList/devine.svg?branch=master)](https://travis-ci.org/SocialList/devine)
 # Devine
 
 ## This application requires:
