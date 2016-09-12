@@ -1,0 +1,312 @@
+  [1m[36m (1039.0ms)[0m  [1mCREATE DATABASE "devine_development" ENCODING = 'unicode' TEMPLATE = "template0"[0m
+  [1m[36m (74.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (71.7ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160909121755)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (101.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "provider" character varying, "uid" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160909121755"]]
+  [1m[36m (21.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateGithubProfiles (20160909132207)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (87.8ms)[0m  [1mCREATE TABLE "github_profiles" ("id" serial primary key, "user_id" integer, "nickname" character varying, "email" character varying, "name" character varying, "image" character varying, "location" character varying, "public_repo" integer, "public_gists" integer, "followers" integer, "following" integer, "member_since" character varying, "access_token" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160909132207"]]
+  [1m[36m (14.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'github_profiles'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-11 14:28:05 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (55.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (3.1ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 8093ms (Views: 8090.0ms | ActiveRecord: 2.9ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (601.9ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (637.9ms)
+
+
+Started GET "/assets/1st_load_framework.self-9498765b518768edfedd47e10b541508dc1c20b38c0e053cbaa02a7ec5b748eb.css?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/github.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/application.self-27a424817124a538a1bd8a9038aea5396ae2ca72ec5dbb40fa23fc96e0859767.css?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/bootstrap/util.self-a75ba796b1476394bb519d4ba1fbfd5e2757ba5dadcb65feb46bcfca4ae23294.js?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/bootstrap/alert.self-76136ca69ff271dddf2ee3dfd8282c4567ab7ee90a0d741e704c4b9555ad2492.js?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/bootstrap/button.self-fa54161945175b424a88c0d326334233a636d26ac062bfb88a9b02305972fc1f.js?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/bootstrap/carousel.self-91220b1a3011a868c07d0c99d0c3972a3cb8e245ce902764ac3c4204a31ba1dc.js?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/bootstrap/collapse.self-3a5445d44976695f7305ba57d1e1efa271d333255d8901375b5d6fb8038e67d3.js?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.self-2874882524d88d0960bf1fef1ec30f613c67c7c09bcf9e15045804b900976bc4.js?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/bootstrap/modal.self-5768296f5858cb00f9d7811e274e53ad12a8198b84f80145c6ea34b6918aa50c.js?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.self-51414b1ccf04dbf8b414c0975de18a850498758175b7ebd776bea347979a6788.js?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/bootstrap/tab.self-e13fbfe2fa20fe1fee4cb545e8e37b6c72b84c369e20319e63d9ec8eb76bd7d6.js?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.self-f310faf28ca779c7ae2a93c9f4aa72b9e1f8550373b7b357711a7e479dd65161.js?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/bootstrap/popover.self-dd046c8bebdbfc7029bc95e07638335353766ea2be0dc935e3cc3c3af48f974a.js?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.self-636159b35205da4142a43bc02d2849d77d3ac07a0946211585cde15a9c6ff21f.js?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/github.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/assets/application.self-85a3df08aab34bc6a22c0cf18bd349b5a3fda5edca3e6dead5e0390446173b12.js?body=1" for 127.0.0.1 at 2016-09-11 14:28:14 +0100
+
+
+Started GET "/signin" for 127.0.0.1 at 2016-09-11 14:28:18 +0100
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/auth/github
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2016-09-11 14:28:18 +0100
+
+
+Started GET "/signin" for 127.0.0.1 at 2016-09-11 14:28:31 +0100
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/auth/github
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2016-09-11 14:28:31 +0100
+
+
+Started GET "/signin" for 127.0.0.1 at 2016-09-11 14:34:09 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/auth/github
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2016-09-11 14:34:10 +0100
+
+
+Started GET "/auth/github/callback?code=6c512c508e08e877475c&state=c043ac3ef5c9dbf69c2963dbad8434fec21b1accb564cf2d" for 127.0.0.1 at 2016-09-11 14:34:19 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"6c512c508e08e877475c", "state"=>"c043ac3ef5c9dbf69c2963dbad8434fec21b1accb564cf2d", "provider"=>"github"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "github"], ["uid", "19621102"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("provider", "uid", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["provider", "github"], ["uid", "19621102"], ["name", "Francesco Nunez"], ["created_at", "2016-09-11 13:34:20.996905"], ["updated_at", "2016-09-11 13:34:20.996905"]]
+  [1m[36m (18.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "github_profiles" ("user_id", "nickname", "email", "name", "image", "location", "public_repo", "public_gists", "followers", "following", "member_since", "access_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["user_id", 1], ["nickname", "Frunez"], ["email", "francesco.nunez@gmail.com"], ["name", "Francesco Nunez"], ["image", "https://avatars.githubusercontent.com/u/19621102?v=3"], ["location", ""], ["public_repo", 22], ["public_gists", 0], ["followers", 20], ["following", 32], ["member_since", "2016-05-28T08:52:15Z"], ["access_token", "cd9fd5ddfea664b7ed82d42a4dafb823937b4ce8"], ["created_at", "2016-09-11 13:34:21.044284"], ["updated_at", "2016-09-11 13:34:21.044284"]]
+  [1m[35m (20.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 140ms (ActiveRecord: 48.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-11 14:34:21 +0100
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGithubProfile Load (0.7ms)[0m  [1mSELECT  "github_profiles".* FROM "github_profiles" WHERE "github_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  Rendered visitors/index.html.erb within layouts/application (179.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (3.6ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 451ms (Views: 449.0ms | ActiveRecord: 1.6ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (609.0ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (622.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-09-11 14:37:44 +0100
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_user.html.erb (0.9ms)
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.2ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (0.1ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 45ms (Views: 41.7ms | ActiveRecord: 1.4ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.0ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (27.2ms)
+
+
+Started GET "/github/index" for 127.0.0.1 at 2016-09-11 14:37:53 +0100
+Processing by GithubController#index as HTML
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGithubProfile Load (1.0ms)[0m  [1mSELECT  "github_profiles".* FROM "github_profiles" WHERE "github_profiles"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  Rendered github/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.2ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (0.2ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 595ms (Views: 41.5ms | ActiveRecord: 4.1ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.0ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (27.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-11 14:39:12 +0100
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mGithubProfile Load (0.5ms)[0m  SELECT  "github_profiles".* FROM "github_profiles" WHERE "github_profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  Rendered visitors/index.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (0.2ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 48ms (Views: 44.5ms | ActiveRecord: 2.9ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.6ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (27.1ms)
+
+
+Started GET "/github/index" for 127.0.0.1 at 2016-09-11 14:44:43 +0100
+Processing by GithubController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mGithubProfile Load (0.4ms)[0m  SELECT  "github_profiles".* FROM "github_profiles" WHERE "github_profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  Rendered github/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.2ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (0.1ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 556ms (Views: 36.5ms | ActiveRecord: 2.6ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.1ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (26.3ms)
+
+
+Started GET "/github/index" for 127.0.0.1 at 2016-09-11 14:46:53 +0100
+Processing by GithubController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mGithubProfile Load (0.3ms)[0m  SELECT  "github_profiles".* FROM "github_profiles" WHERE "github_profiles"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  Rendered github/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.2ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (0.2ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 557ms (Views: 35.5ms | ActiveRecord: 2.2ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.3ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/frunez/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (26.8ms)
+
+
+Started PUT "/__web_console/repl_sessions/3271d33c96896584650869897fd0ed02" for 127.0.0.1 at 2016-09-11 14:58:02 +0100
+
+
+Started PUT "/__web_console/repl_sessions/3271d33c96896584650869897fd0ed02" for 127.0.0.1 at 2016-09-11 14:58:19 +0100
+
+
+Started PUT "/__web_console/repl_sessions/3271d33c96896584650869897fd0ed02" for 127.0.0.1 at 2016-09-11 14:58:25 +0100
+
+
+Started PUT "/__web_console/repl_sessions/3271d33c96896584650869897fd0ed02" for 127.0.0.1 at 2016-09-11 14:58:38 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (3.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'github_profiles'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
