@@ -1,0 +1,9 @@
+<h1>Public Repositories</h1>
+<ul style="list-style-type: none;">
+  <% @repos.each do |repo| %>
+    <li>
+      <p><b>
+        <a href="<%= repo[:html_url] %>"><%= repo[:name] %></b>:</a> <i><%= repo[:description] %></i> <b>[Watchers: <%= repo[:watchers] %>, Forks: <%= repo[:forks]%>, Stargazers: <%= repo[:stargazers_count] %>]</b></p>
+    </li>
+  <% end %>
+</ul>
