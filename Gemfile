@@ -12,6 +12,8 @@ gem 'high_voltage'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'pg'
+gem 'simple_form'
+
 
 group :development, :test do
   gem 'byebug'
@@ -19,6 +21,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'webmock'
 end
 
 group :development do
