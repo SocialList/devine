@@ -7,6 +7,7 @@
 
 ## What we plan to do next
 
+- View for list of repos (with short descript) for help needed
 - Implement commentator
 - fix github tests
 - Implement mailboxer
