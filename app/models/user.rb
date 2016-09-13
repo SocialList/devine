@@ -29,4 +29,8 @@ class User < ActiveRecord::Base
       access_token: auth[:credentials][:token]})
   end
 
+  def mailboxer_email(object)
+    email
+  end
+
 end
