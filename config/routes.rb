@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   get 'github/index'
   resources :projects
   resources :users
-  resources :conversations, only: [:index, :show, :destroy]
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply
+    end
+  end
   resources :messages, only: [:new, :create]
   root to: 'projects#index'
   get '/auth/:provider/callback' => 'sessions#create'
