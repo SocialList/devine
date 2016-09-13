@@ -31,6 +31,7 @@ module Omniauth
       expect(page).to have_content('Sign in')
       auth_mock
       click_link 'Sign in'
+      expect(page).to have_content('Welcome, natasha')
     end
   end
 end
