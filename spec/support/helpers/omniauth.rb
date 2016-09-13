@@ -33,5 +33,14 @@ module Omniauth
       click_link 'Sign in'
       expect(page).to have_content('Welcome, natasha')
     end
+
+    def make_project
+      click_link 'My Repos'
+      expect(page).to have_button "Share .atom"
+      click_button 'Share .atom'
+      expect(page.current_path).to eq "/projects/new"
+      fill_in 'Description', with: "These are my atom files"
+      click_button 'Create Project'
+    end
   end
 end
