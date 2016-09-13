@@ -90,6 +90,8 @@ GEM
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.14)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hashdiff (0.3.0)
@@ -266,6 +268,7 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails
   faker
+  friendly_id (~> 5.1.0)
   high_voltage
   jbuilder (~> 2.0)
   jquery-rails

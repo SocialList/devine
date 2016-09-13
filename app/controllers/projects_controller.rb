@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.create(project_params)
+    @project = Project.create! project_params
     flash[:notice] = "Project created successfully"
     redirect_to projects_url
   end
@@ -39,6 +39,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:description, :repo_id)
+    params.require(:project).permit(:description, :repo_id, :name)
   end
 end

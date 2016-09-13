@@ -17,11 +17,12 @@
 <div class="">
   <% @projects.each do |project| %>
     <div class="well">
-      <%= "Project's Name: " + Octokit.repo(project.repo_id).name %>
+      <%= "Project's Name: " + Project.friendly.find(params[:id]) %>
+
       <p>
         <%= project.description %>
       </p>
-      <%= link_to "View project #{Octokit.repo(project.repo_id).name}", project_path(project) %>
+      <%= link_to "View project #{Project.friendly.find(params[:id])}", project_path(project) %>
     </div>
   <% end %>
 </div>
