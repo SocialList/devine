@@ -13,7 +13,14 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'pg'
 gem 'simple_form'
-
+gem 'mailboxer'
+gem 'gravatar_image_tag'
+gem 'chosen-rails'
+gem 'jquery-turbolinks'
+# will_paginate
+# gem 'bootstrap-sass'
+gem 'bootstrap-will_paginate'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug'
