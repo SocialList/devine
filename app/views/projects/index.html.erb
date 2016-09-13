@@ -17,12 +17,12 @@
 <div class="">
   <% @projects.each do |project| %>
     <div class="well">
-      <%= "Project's Name: " + Project.friendly.find(params[:id]) %>
+      <%= "Project's Name: " + project.name %>
 
       <p>
         <%= project.description %>
       </p>
-      <%= link_to "View project #{Project.friendly.find(params[:id])}", project_path(project) %>
+      <%= link_to "View project #{project.name}", project_path(project) %>
     </div>
   <% end %>
 </div>

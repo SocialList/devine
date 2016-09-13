@@ -5,7 +5,7 @@ feature 'Updating a project' do
     visit '/'
     signin
     make_project
-    click_link 'View project .atom'
+    click_link 'View project Text editors'
     click_link 'Edit Project'
     fill_in 'Description', with: 'Whatever!'
     click_button 'Update Project'

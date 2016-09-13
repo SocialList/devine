@@ -14,23 +14,23 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
+    @project = Project.friendly.find(params[:id])
     @repo_info = Octokit.repo(@project.repo_id)
   end
 
   def edit
-    @project = Project.find(params[:id])
+    @project = Project.friendly.find(params[:id])
   end
 
   def update
-    @project = Project.find(params[:id])
+    @project = Project.friendly.find(params[:id])
     @project.update(project_params)
     flash[:notice] = "Successfully updated project"
     redirect_to @project
   end
 
   def destroy
-    @project = Project.find(params[:id])
+    @project = Project.friendly.find(params[:id])
     @project.destroy
     flash[:notice] = "Successfully deleted project"
     redirect_to root_path
