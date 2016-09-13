@@ -1,9 +1,29 @@
+<div><h3>Welcome, <%=  current_user.name %></h3></div>
+<img src="<%= current_user.github_profile.image %>" width="100px" style="float: left;
+margin-right: 12px;">
+<div style="margin-left: 120px;">
+  <h4>From: <%= current_user.github_profile.location %></h4>
+  <h4>Public Repos: <%= current_user.github_profile.public_repo %></h4>
+  <h4>Public Gists: <%= current_user.github_profile.public_gists %></h4>
+  <h4>Followers: <%= current_user.github_profile.followers %></h4>
+  <h4>Following: <%= current_user.github_profile.following %></h4>
+</div>
+<hr>
 <h1>Public Repositories</h1>
 <ul style="list-style-type: none;">
   <% @repos.each do |repo| %>
     <li>
-      <p><b>
-        <a href="<%= repo[:html_url] %>"><%= repo[:name] %></b>:</a> <i><%= repo[:description] %></i> <b>[Watchers: <%= repo[:watchers] %>, Forks: <%= repo[:forks]%>, Stargazers: <%= repo[:stargazers_count] %>]</b></p>
+      <div>
+        <p><b><a href="<%= repo[:html_url] %>"><%= repo[:name] %></b>:</a>
+        <br>
+        <i><%= repo[:description] %></i>
+        <br>
+        <b>[Watchers: <%= repo[:watchers] %>, Forks: <%= repo[:forks]%>, Stargazers: <%= repo[:stargazers_count] %>]</b></p>
+      </div>
+      <form action="/projects/new">
+        <input type="hidden" name="repo_id" value="<%= repo[:id] %>">
+        <button type="submit" class="btn btn-default">Share <%= repo[:name] %></button>
+      </form>
     </li>
   <% end %>
 </ul>
