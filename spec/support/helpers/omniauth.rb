@@ -43,4 +43,22 @@ module Omniauth
       click_button 'Create Project'
     end
   end
+
+  module MessagingHelpers
+    def send_message
+      click_link 'Mailbox'
+      click_link 'Start conversation'
+      fill_in 'Subject', with: 'Test subject'
+      fill_in 'Message', with: 'Test message'
+      select('natasha', :from => 'Choose recipients')
+      click_button 'Send'
+    end
+
+    def handle_js_confirm(accept=true)
+      page.evaluate_script "window.original_confirm_function = window.confirm"
+      page.evaluate_script "window.confirm = function(msg) { return #{!!accept}; }"
+      yield
+      page.evaluate_script "window.confirm = window.original_confirm_function"
+    end
+  end
 end
