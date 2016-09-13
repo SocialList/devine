@@ -1,0 +1,5 @@
+<%= simple_form_for @project do |f|%>
+  <%= f.input :description %>
+  <%= f.input :repo_id, :as => :hidden, input_html: {id: 'repo_id', value: params[:repo_id]} %>
+  <%= f.button :submit %>
+<% end %>

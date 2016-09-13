@@ -12,6 +12,8 @@ gem 'high_voltage'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'pg'
+gem 'simple_form'
+
 
 group :development, :test do
   gem 'byebug'
@@ -19,6 +21,9 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'webmock'
+  gem 'sinatra'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -36,4 +41,6 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'shoulda'
+
 end
