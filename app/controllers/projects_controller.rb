@@ -18,6 +18,17 @@ class ProjectsController < ApplicationController
     @repo_info = Octokit.repo(@project.repo_id)
   end
 
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    @project.update(project_params)
+    flash[:notice] = "Successfully updated project"
+    redirect_to @project
+  end
+
   private
 
   def project_params

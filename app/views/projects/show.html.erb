@@ -8,4 +8,4 @@
 <%=link_to "Owner: " + @repo_info.owner["login"], @repo_info.owner["html_url"] %>
 <br>
 <%= link_to "Github Repo", @repo_info.html_url %>
-<!-- <%= link_to 'Followers', Octokit.repo(@project.repo_id).owner["followers_url"] %> -->
+<%= link_to "Edit Project", edit_project_url %>
