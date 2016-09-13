@@ -6,6 +6,9 @@
       <%= link_to 'Restore', restore_conversation_path(conversation), class: "btn btn-xs btn-info", method: :post%>
     <% else %>
       <%= link_to 'Move to trash', conversation_path(conversation), class: "btn btn-xs btn-danger", method: :delete, data: {confirm: 'Are you sure?'} %>
+      <% if conversation.is_unread?(current_user) %>
+        <%= link_to 'Mark as read', mark_as_read_conversation_path(conversation), class: "btn btn-xs btn-default", method: :post %>
+      <% end %>
     <% end %>
   </div>
    <p><%= render 'conversations/participants', conversation: conversation %></p>
