@@ -5,7 +5,7 @@ feature 'Deleting projects' do
     visit '/'
     signin
     make_project
-    click_link 'View project .atom'
+    click_link 'View project Text editors'
     click_link 'Delete Project'
     expect(page).to have_content 'Successfully deleted project'
   end
