@@ -23,6 +23,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'webmock'
   gem 'sinatra'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -40,4 +41,6 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'shoulda'
+
 end
