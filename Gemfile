@@ -53,7 +53,8 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'shoulda'
+end
 
-  gem 'rails_12factor', group: :production
-
+group :production do
+  gem 'rails_12factor'
 end
