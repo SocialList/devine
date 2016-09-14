@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Accessing mailbox' do
+feature 'Mailbox' do
   context 'User not signed in: ' do
     scenario 'user cannot access Mailbox without signing in' do
       expect(page).not_to have_link 'Start conversation'
@@ -32,8 +32,14 @@ feature 'Accessing mailbox' do
       send_message
       click_link 'Mailbox'
       click_link 'Move to trash'
-      handle_js_confirm(accept=true)
       expect(page).to have_content 'The conversation was moved to trash'
+    end
+
+    scenario 'user can access sent messages' do
+      send_message
+      click_link 'Mailbox'
+      click_link 'Sent'
+      expect(page).to have_content 'Test subject'
     end
   end
 
