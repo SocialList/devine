@@ -24,7 +24,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'webmock'
   gem 'sinatra'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
 end
 
 group :development do

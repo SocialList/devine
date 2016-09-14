@@ -17,9 +17,11 @@
     <br>
     <%= link_to "Github Repo", @repo_info.html_url %>
     <br>
+    <% if current_user == @project.user %>
     <%= link_to "Edit Project", edit_project_url %>
     <br>
     <%= link_to "Delete Project", project_url(@project), method: :delete %>
+    <% end %>
 
     <div id="disqus_thread"></div>
 
