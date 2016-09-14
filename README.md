@@ -1,4 +1,5 @@
 [![Stories in Ready](https://badge.waffle.io/SocialList/devine.png?label=ready&title=Ready)](https://waffle.io/SocialList/devine)
+<a href='https://coveralls.io/github/SocialList/devine?branch=master'><img src='https://coveralls.io/repos/github/SocialList/devine/badge.svg?branch=master' alt='Coverage Status' /></a>
 [![Build Status](https://travis-ci.org/SocialList/devine.svg?branch=master)](https://travis-ci.org/SocialList/devine)
 # Devine
 
