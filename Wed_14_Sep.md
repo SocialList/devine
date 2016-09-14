@@ -1,4 +1,4 @@
-# Stand Up 13/9/16
+# Stand Up 14/9/16
 
 ## What we did yesterday
 
@@ -12,8 +12,10 @@
 
 - Feature Freeze Time
 - CSSing with Bootsrap fun fun fun
-- Heroku Deployment?
+- Heroku Deployment
 - Merge Mailboxer tests
+- Debugging/Testing
+- Polishing/Refactoring
 
 ## what's stopping us
 
