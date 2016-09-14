@@ -21,6 +21,8 @@ gem 'jquery-turbolinks'
 # gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'
 gem 'will_paginate'
+gem 'friendly_id', '~> 5.1.0'
+
 
 group :development, :test do
   gem 'byebug'
@@ -30,7 +32,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'webmock'
   gem 'sinatra'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
 end
 
 group :development do

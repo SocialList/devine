@@ -1,14 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      <%= @repo_info.name %>
+    </title>
+  </head>
+  <body>
+    <h2>
+      <%= @repo_info.name %>
+    </h2>
+    <p>
+      <%= @project.description %>
+    </p>
+    <%=link_to "Owner: " + @repo_info.owner["login"], @repo_info.owner["html_url"] %>
+    <br>
+    <%= link_to "Github Repo", @repo_info.html_url %>
+    <br>
+    <% if current_user == @project.user %>
+    <%= link_to "Edit Project", edit_project_url %>
+    <br>
+    <%= link_to "Delete Project", project_url(@project), method: :delete %>
+    <% end %>
 
-<h2>
-  <%= @repo_info.name %>
-</h2>
-<p>
-  <%= @project.description %>
-</p>
-<%=link_to "Owner: " + @repo_info.owner["login"], @repo_info.owner["html_url"] %>
-<br>
-<%= link_to "Github Repo", @repo_info.html_url %>
-<br>
-<%= link_to "Edit Project", edit_project_url %>
-<br>
-<%= link_to "Delete Project", project_url(@project), method: :delete %>
+    <div id="disqus_thread"></div>
+
+      <script src="disqus.js" language="JavaScript" async></script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  </body>
+</html>
