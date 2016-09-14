@@ -22,6 +22,8 @@ module Devine
 
     Disqus::defaults[:account] = 'your_account_name'
     Disqus::defaults[:developer] = true
+    Disqus::defaults[:container_id] = "disqus_thread"
+    Disqus::defaults[:show_powered_by] = false
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
