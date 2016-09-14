@@ -1,15 +1,13 @@
 <%# add navigation links to this file %>
-<li class='nav-item'><%= link_to 'About', page_path('about'), class: 'nav-link' %></li>
+<li class='nav-item'>
+  <%= link_to 'About', page_path('about'), class: 'nav-link' %>
+</li>
 <%# Add navigation after %>
-<% unless current_user %>
-  <!-- <li>
-    <%= link_to "Sign in with Github", "/signin" %>
-  </li> -->
-<% else %>
+<% if current_user %>
   <li class='nav-item'>
     <%= link_to "My Repos", "/github/index", class: 'nav-link' %>
   </li>
-  <!-- <li>
-    <%= link_to "Sign out", "/signout" %>
-  </li> -->
+  <li class='nav-item'>
+    <%= link_to 'Mailbox', conversations_path, class: 'nav-link' %>
+  </li>
 <% end %>

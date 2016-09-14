@@ -45,4 +45,15 @@ module Omniauth
       click_button 'Create Project'
     end
   end
+
+  module MessagingHelpers
+    def send_message
+      click_link 'Mailbox'
+      click_link 'Start conversation'
+      fill_in 'Subject', with: 'Test subject'
+      fill_in 'Message', with: 'Test message'
+      select('natasha', :from => 'Choose recipients')
+      click_button 'Send'
+    end
+  end
 end
