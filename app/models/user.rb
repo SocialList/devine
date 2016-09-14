@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_one :github_profile
   has_many :projects
+  acts_as_messageable
 
   def self.create_with_omniauth(auth)
     new_user = create! do |user|
