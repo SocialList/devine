@@ -9,6 +9,7 @@
   <body>
     <h2>
       <%= @repo_info.name %>
+      <% console %>
     </h2>
     <p>
       <%= @project.description %>
@@ -27,6 +28,7 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'devine-3';
+    var disqus_identifier = <% @repo_info.id %>;
     var disqus_url = 'https://devine-github.herokuapp.com/projects/';
 	var disqus_config = function () {
 	  this.language = "en";
