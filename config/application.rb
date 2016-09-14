@@ -20,7 +20,7 @@ module Devine
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
 
-    Disqus::defaults[:account] = 'your_account_name'
+    Disqus::defaults[:account] = 'devine-3'
     Disqus::defaults[:developer] = true
     Disqus::defaults[:container_id] = "disqus_thread"
     Disqus::defaults[:show_powered_by] = false
