@@ -35,6 +35,7 @@ group :development do
   gem 'spring-commands-rspec'
   gem 'pry'
   gem 'pry-rails'
+  gem "figaro"
 end
 
 group :test do
