@@ -44,4 +44,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'shoulda'
 
+  gem 'rails_12factor', group: :production
+
 end

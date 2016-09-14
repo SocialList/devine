@@ -56,6 +56,10 @@ production:
   encoding: unicode
   database: devine_production
   pool:     5
-  username: 
+  omniauth_provider_key: <%= ENV["OMNIAUTH_PROVIDER_KEY"] %>
+  omniauth_provider_secret: <%= ENV["OMNIAUTH_PROVIDER_SECRET"] %>
+  domain_name: <%= ENV["DOMAIN_NAME"] %>
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+  username:
   password:
   template: template0
