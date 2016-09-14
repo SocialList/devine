@@ -14,6 +14,7 @@ gem 'omniauth-github'
 gem 'pg'
 gem 'simple_form'
 gem 'friendly_id', '~> 5.1.0'
+gem 'disqus'
 
 
 group :development, :test do
