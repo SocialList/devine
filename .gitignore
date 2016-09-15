@@ -1,4 +1,3 @@
-
 #----------------------------------------------------------------------------
 # Ignore these files when commiting to a git repository.
 #
@@ -15,6 +14,10 @@
 /.bundle
 /vendor/bundle/
 /vendor/ruby/
+
+.bundle/
+.env
+log/
 
 # minimal Rails specific artifacts
 db/*.sqlite3

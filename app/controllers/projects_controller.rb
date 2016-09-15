@@ -23,6 +23,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.friendly.find(params[:id])
     @repo_info = Octokit.repo(@project.repo_id)
+    @chosen_recipient = User.find_by(id: params[:to].to_i) if params[:to]
   end
 
   def edit
