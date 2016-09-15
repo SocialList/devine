@@ -8,7 +8,11 @@
     <%= link_to "My Repos", "/github/index", class: 'nav-link' %>
   </li>
   <li class='nav-item'>
-    <%= link_to "Mailbox", conversations_path, class: 'nav-link' %><tag style="font-size:8">
-    <%= current_user.unread_inbox_count %>
+    <span>
+      <%= link_to "Mailbox", conversations_path, class: 'nav-link' %>
+    </span>
+    <span style="font-size:8; color:red; position:relative; left:50%">
+        <%= current_user.unread_inbox_count %>
+    </span>
   </li>
 <% end %>
