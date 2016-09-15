@@ -3,7 +3,11 @@ require 'sinatra/base'
 class FakeGitHub < Sinatra::Base
 
   get '/repositories/:id' do
-    json_response 200, 'repos.json'
+    if params[:id] == 66507460
+      json_response 200, 'repos.json'
+    else
+      json_response 200, 'repos11111111.json'
+    end
   end
 
   get '/user/repos' do
