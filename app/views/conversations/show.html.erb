@@ -13,7 +13,8 @@
         <div class="media">
           <% message = receipt.message %>
           <div class="media-left">
-            <%= image_tag Octokit.user(User.find(id = message.sender.id).uid.to_i).avatar_url %>
+            <%= image_tag Octokit.user(User.find(id = message.sender.id).uid.to_i).avatar_url, :style => "float: left;
+            margin-right: 35;" , :width => "100%"%>
           </div>
           <div class="media-body">
             <h6 class="media-heading"><%= message.sender.name %>
