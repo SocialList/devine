@@ -13,7 +13,7 @@ class ConversationsController < ApplicationController
     else
       @conversations = @mailbox.trash
     end
-    @conversations = @mailbox.inbox.paginate(page: params[:page], per_page: 10)
+    @conversations = @conversations.paginate(page: params[:page], per_page: 10)
   end
 
   def show

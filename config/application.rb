@@ -20,6 +20,11 @@ module Devine
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
 
+    Disqus::defaults[:account] = 'devine-3'
+    Disqus::defaults[:developer] = true
+    Disqus::defaults[:container_id] = "disqus_thread"
+    Disqus::defaults[:show_powered_by] = false
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

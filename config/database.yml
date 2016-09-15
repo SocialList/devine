@@ -56,6 +56,6 @@ production:
   encoding: unicode
   database: devine_production
   pool:     5
-  username: 
+  username:
   password:
   template: template0

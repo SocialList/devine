@@ -22,6 +22,7 @@ gem 'jquery-turbolinks'
 gem 'bootstrap-will_paginate'
 gem 'will_paginate'
 gem 'friendly_id', '~> 5.1.0'
+gem 'disqus'
 
 
 group :development, :test do
@@ -43,13 +44,18 @@ group :development do
   gem 'spring-commands-rspec'
   gem 'pry'
   gem 'pry-rails'
+  gem "figaro"
 end
 
 group :test do
+  gem 'coveralls', require: false
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'shoulda'
+end
 
+group :production do
+  gem 'rails_12factor'
 end
