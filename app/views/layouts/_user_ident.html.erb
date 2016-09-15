@@ -1,7 +1,7 @@
 <% if current_user %>
   <div class="pull-right ident">
-    <img src="<%= current_user.github_profile.image %>" class="img-rounded usr-img">
-    <p class="text text-default navi-text" style="" >LOGGED AS, <%=  current_user.name %></p>
+    <img src="<%= current_user.github_profile.image %>" class="img img-responsive img-rounded usr-img">
+    <p class="text text-default navi-text" ><%=  current_user.name %></p>
   </div>
 
 <% end %>

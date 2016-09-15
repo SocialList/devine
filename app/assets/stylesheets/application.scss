@@ -19,15 +19,31 @@
  // font-family: 'Open Sans Condensed', sans-serif;
  // font-family: 'Oswald', sans-serif;
  // font-family: 'Raleway', sans-serif;
- // font-family: 'Baloo', cursive;
+ // font-family: 'Baloo', cursive; # main text
  // font-family: 'Lobster', cursive;
  // font-family: 'Yanone Kaffeesatz', sans-serif;
-
  body {
-   margin: 0;
-   font-family: 'Open Sans Condensed', sans-serif;
+   background-color: #fafafa;
+  //  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
    font-size: 22px;
  }
+
+#heading {
+  font-family: 'Baloo', cursive;
+}
+
+#tagline {
+  color: #4f4f4f;
+}
+
+#jumbtext {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+#devine-word {
+  font-family: 'Baloo', cursive;
+}
  .messages {
    max-height: 400px;
    overflow-y: auto;
@@ -38,82 +54,100 @@
  .navi-text {
    float: right;
    margin-right: 12px;
-   padding-top: 10px;
+   margin-top: 5px;
    font-family: 'Oswald', sans-serif;
    color: #fff;
    font-size: 15px;
  }
 
  .usr-img {
-   width: 50px;
+   width: 30px;
    float: right;
    margin-right: 12px;
  }
+
  .ident {
-   margin: 0 10px 0 150px;
+   position: absolute;
+    right: 50px;
+    top: 10px;
  }
+
+.specialjum {
+  position:relative;
+    top: -30px;
+
+  width: 100%;
+}
  .nav-link {
    font-family: 'Raleway', sans-serif;
  }
 
-
- .jumbotron {
-
-
- }
-
- .voxx {
-   background-color: #6C7A89;
-   color: #000;
- }
+ // .voxx {
+ //   background-color: #6C7A89;
+ //   color: #000;
+ // }
 
  .navbar {
-   background-color: #16a085;
-   margin-bottom: 0;
-   z-index: 99999999;
-   border: 0;
-   font-size: 20px !important;
-   line-height: 1.4 !important;
-   border-radius: 0;
-   letter-spacing: 3px;
- }
+    margin-bottom: 0;
+    background-color: #16a085;
+    z-index: 9999;
+    border: 0;
+    font-size: 15px !important;
+    // line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    height: 45px;
+}
+// .navbar li a, .navbar .navbar-brand {
+//     color: #fff !important;
+//     height: 45px;
+// }
+//
+// .navbar-nav li a:hover, .navbar-nav li.active a {
+//     color: #f4511e !important;
+//     background-color: #fff !important;
+// }
 
- .navbar-dark .navbar-toggle {
-   color: #ffffee !important;
-   background-color: #fff !important;
- }
-
- .navbar-nav li a:hover, .navbar-nav li.active a {
-   color: #fffff !important ;
-   background-color: #fff !important;
- }
-
+// .navbar-default .navbar-toggle {
+//     border-color: transparent;
+//     color: #fff !important;
+// }
 
 
  .nav-logo {
-   height: 50px;
+   height: 30px;
  }
 
  .project-name {
-   font-family: 'Baloo', cursive;
+   font-family: 'Yanone Kaffeesatz', sans-serif;
  }
 
  .description {
    font-weight: bold;
+   padding: 24px 24px;
+   line-height: 18px;
  }
 
  .project {
    background-color: #E4F1FE;
    padding: 40px;
-   margin-bottom: 5px;
+   margin-bottom: 8px;
  }
 
  .notifier {
    display: inline;
    color: red !important;
+   position: relative;
+    left: -30px;
+    top: 5px;
  }
 
  .jumbotron {
-     background-color: #f4511e; /* Orange */
-     color: #ffffff;
+     background-color: #F5F5F5;
+     color: gray;
  }
+
+.repo-name {
+  font-size: 30px;
+
+}

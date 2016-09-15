@@ -7,24 +7,32 @@
     </title>
   </head>
   <body>
-    <h2>
+    <h2 class="repo-name text-warning">
       <%= @repo_info.name %>
     </h2>
-    <p>
+    <hr>
+    <div class="btn-group">
+      <a href="<%= @repo_info.owner["html_url"] %>" class="btn btn-info">Owner: <%= @repo_info.owner["login"] %></a>
+      <a href="<%= @repo_info.html_url %>" class="btn btn-default">Repo <i class="fa fa-github-alt"></i></a>
+    </div>
+    <br>
+    <p class="text text-success">
       <%= @project.description %>
     </p>
-    <%=link_to "Owner: " + @repo_info.owner["login"], @repo_info.owner["html_url"] %>
     <br>
-    <%= link_to "Github Repo", @repo_info.html_url %>
-    <br>
-    <% if current_user == @project.user %>
-    <%= link_to "Edit Project", edit_project_url %>
-    <br>
-    <%= link_to "Delete Project", project_url(@project), method: :delete %>
-    <% end %>
-    <% unless current_user == @project.user %>
-      <%= link_to 'Contact owner', new_message_path(to: @project.user.id), class: "btn ntn-default btn-sm" %>
-    <% end %>
+
+    <div class="btn-group">
+
+      <% if current_user == @project.user %>
+      <%= link_to "Edit Project", edit_project_url, class: "btn btn-primary btn-sm" %>
+
+      <%= link_to "Delete Project", project_url(@project), method: :delete, class: "btn btn-danger btn-sm" %>
+      <% end %>
+      <% unless current_user == @project.user %>
+        <%= link_to 'Contact owner', new_message_path(to: @project.user.id), class: "btn ntn-default btn-sm" %>
+      <% end %>
+    </div>
+
 
     <div id="disqus_thread"></div>
 <script type="text/javascript">

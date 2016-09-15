@@ -18,8 +18,8 @@
   <ul style="list-style-type: none;">
     <% @repos.each do |repo| %>
       <li>
-        <div class="well text-center">
-          <b class="pull-left well"><a href="<%= repo[:html_url] %>" class="project-name"><%= repo[:name] %>:</b></a>
+        <div class="well well-sm text-center">
+          <b class="pull-left"><a href="<%= repo[:html_url] %>" class="repo-name"><%= repo[:name] %>:</b></a>
           <br>
           <p class="description"><%= repo[:description] %></p>
           <br>
