@@ -6,4 +6,12 @@ module MessagesHelper
     end
     s.html_safe
   end
+
+  # def auto_subject(project_name)
+  #   if @project
+  #     project_name = @project.name
+  #   else
+  #     project_name = nil
+  #   end
+  # end
 end
