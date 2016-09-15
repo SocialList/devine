@@ -1,8 +1,8 @@
 <% if user_signed_in? %>
-  <li class='nav-item'><%= link_to 'Sign out', signout_path, class: 'nav-link' %></li>
+  <li class='nav-item'><%= link_to 'SIGNOUT', signout_path, class: 'nav-link' %></li>
 <% else %>
-  <li class='nav-item'><%= link_to 'Sign in with Github', signin_path, class: 'nav-link' %></li>
+  <li class='nav-item'><%= link_to 'GITHUB LOGIN', signin_path, class: 'nav-link' %></li>
 <% end %>
 <% if user_signed_in? %>
-  <li class='nav-item'><%= link_to 'Devs', users_path, class: 'nav-link' %></li>
+  <li class='nav-item'><%= link_to 'DEVS', users_path, class: 'nav-link' %></li>
 <% end %>

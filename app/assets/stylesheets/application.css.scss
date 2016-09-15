@@ -14,11 +14,96 @@
  *= require_self
  */
  @import 'chosen';
+ @import 'https://fonts.googleapis.com/css?family=Baloo|Lobster|Open+Sans+Condensed:300|Oswald|Raleway|Yanone+Kaffeesatz';
 
+ // font-family: 'Open Sans Condensed', sans-serif;
+ // font-family: 'Oswald', sans-serif;
+ // font-family: 'Raleway', sans-serif;
+ // font-family: 'Baloo', cursive;
+ // font-family: 'Lobster', cursive;
+ // font-family: 'Yanone Kaffeesatz', sans-serif;
 
+ body {
+   margin: 0;
+   font-family: 'Open Sans Condensed', sans-serif;
+   font-size: 22px;
+ }
  .messages {
    max-height: 400px;
    overflow-y: auto;
    margin-bottom: 1em;
    margin-top: 1em;
+ }
+
+ .navi-text {
+   float: right;
+   margin-right: 12px;
+   padding-top: 10px;
+   font-family: 'Oswald', sans-serif;
+   color: #fff;
+   font-size: 15px;
+ }
+
+ .usr-img {
+   width: 50px;
+   float: right;
+   margin-right: 12px;
+ }
+ .ident {
+   margin: 0 10px 0 150px;
+ }
+ .nav-link {
+   font-family: 'Raleway', sans-serif;
+ }
+
+
+ .jumbotron {
+
+
+ }
+
+ .voxx {
+   background-color: #6C7A89;
+   color: #000;
+ }
+
+ .navbar {
+   background-color: #16a085;
+   margin-bottom: 0;
+   z-index: 9999999999999999;
+   border: 0;
+   font-size: 22px !important;
+   line-height: 1.5 !important;
+   border-radius: 0;
+   letter-spacing: 4px;
+ }
+
+ // .navbar-dark .navbar-toggle {
+ //   color: #ffffee !important;
+ //   background-color: #fff !important;
+ // }
+ //
+ // .navbar-nav li a:hover, .navbar-nav li.active a {
+ //   color: #fffff !important ;
+ //   background-color: #fff !important;
+ // }
+
+
+
+ .nav-logo {
+   height: 50px;
+ }
+
+ .project-name {
+   font-family: 'Baloo', cursive;
+ }
+
+ .description {
+   font-weight: bold;
+ }
+
+ .project {
+   background-color: #E4F1FE;
+   padding: 40px;
+   margin-bottom: 5px;
  }
