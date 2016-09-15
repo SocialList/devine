@@ -8,9 +8,8 @@ feature 'View Profiles'do
     signin
     click_link 'Devs'
     click_link 'Bob'
-    expect(page).to have_selector("ul","projects")
+    expect(page).to have_selector("ul#projects")
     click_link 'new project'
-    save_and_open_page
     expect(page).to have_content('tts-datamaster-ee-crack')
     expect(page).to have_content('DELETE')
   end
