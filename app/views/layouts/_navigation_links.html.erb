@@ -8,6 +8,7 @@
     <%= link_to "PROFILE", "/github/index", class: 'nav-link' %>
   </li>
   <li class='nav-item'>
-    <%= link_to 'INBOX', conversations_path, class: 'nav-link' %>
+    <%= link_to 'INBOX', conversations_path, class: 'nav-link' %><tag style="font-size:8">
+    <%= current_user.unread_inbox_count %>
   </li>
 <% end %>
