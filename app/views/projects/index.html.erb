@@ -6,13 +6,12 @@
     <h2 id="tagline">Your Social Hub</h2>
     <p id="jumbtext"><b id="devine-word">Devine</b> is a soon to be popular free social networking website for developers. Devine allows registered users, who hold a Github account, to import their Github profiles, post projects, send messages and keep in touch with friends and colleagues. The site, which is available in the only language that matters, includes Github profiles featuring the ability to propose collaborative projects, address technical issues through our custom chat.</p>
   </div>
-
-</div>
-<div class="">
   <% unless current_user %>
-   <h1 class="text-center">Welcome, please log in using your Github account.</h1>
-  <% end %>
+    <a href="<%= signin_path %>" class="btn btn-default btn-lg">SIGN IN <i class="fa fa-github-alt"></i></a>
 
+  <% end %>
+</div>
+<div class="text-center">
     <% @projects.each do |project| %>
       <div class="row">
         <div class="center-block col-sm-8 project" style="float: none;">
