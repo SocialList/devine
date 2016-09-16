@@ -1,4 +1,13 @@
-<%= simple_form_for @project do |f|%>
-  <%= f.input :description %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container-fluid">
+  <div class="row text-center">
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= simple_form_for @project do |f|%>
+        <%= f.input :name %>
+        <%= f.input :description, as: :text, :input_html => { class: 'test', :cols => 5, :rows => 5 } %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+
+
+</div>

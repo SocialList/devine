@@ -96,6 +96,7 @@
  }
  .navbar-brand {
    background-color: #E4F1FE;
+   padding-right: 25px;
  }
  .navbar-brand img {
    position: relative;
@@ -133,27 +134,37 @@
  .nav-logo {
    height: 30px;
  }
-
+ .gray-hr {
+   color: gray;
+   background-color: gray;
+ }
  .project-name {
    font-family: 'Yanone Kaffeesatz', sans-serif;
+   font-size: 25px;
  }
 
  .description {
    font-weight: bold;
-   padding: 24px 24px;
+   padding: 5px 0px 20px 0px;
    line-height: 18px;
- }
+   font-size: 15px;
 
+ }
+ .project-container {
+   position: relative;
+   top: -30px;
+ }
  .project {
    background-color: #E4F1FE;
-   padding: 40px;
+   border: 1px solid white;
+   border-radius: 25px;
+   padding: 20px;
    margin-bottom: 8px;
  }
 
+
  .notifier {
-   background-color: #F5F5F5;
-   border: 0px solid #a1a1a1;
-   border-radius: 25px;
+   font-weight: bold;
    display: inline;
    color: red !important;
    position: relative;
@@ -171,4 +182,9 @@
   font-size: 30px;
   text-decoration: none;
 
+}
+
+
+.stronger {
+  font-size: 22px;
 }
