@@ -39,5 +39,32 @@
 
     <script   src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"   integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="   crossorigin="anonymous"></script>
     <script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'devine-3';
+        var disqus_identifier = "<%= @repo_info.id -%>";
+        var disqus_url = "<%= project_url(@project) -%>";
+    	var disqus_config = function () {
+    	  this.language = "en";
+    	};
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+        /* * * Disqus Reset Function * * */
+        var reset = function (newUrl, newTitle, newLanguage) {
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.url = newUrl;
+                    this.page.title = newTitle;
+                    this.language = newLanguage;
+                }
+            });
+        };
+    </script>
   </body>
 </html>
