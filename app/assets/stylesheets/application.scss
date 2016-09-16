@@ -47,6 +47,10 @@
 #devine-word {
   font-family: 'Baloo', cursive;
 }
+
+.about {
+  font-family: 'Baloo', cursive;
+}
  .messages {
    max-height: 400px;
    overflow-y: auto;
@@ -86,10 +90,10 @@
    color: white;
  }
 
- // .voxx {
- //   background-color: #6C7A89;
- //   color: #000;
- // }
+ .user-info {
+   background-color: #6C7A89;
+   color: #000;
+ }
 
  .navbar-brand img {
    position: relative;
@@ -159,5 +163,6 @@
 
 .repo-name {
   font-size: 30px;
+  text-decoration: none;
 
 }

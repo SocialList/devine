@@ -1,31 +1,37 @@
+<div class="row">
+  <div class="jumbotron specialjum text-center">
+    <div class="over container body-content text-center">
+      <div class=" col-ms-4 col-ms-offset-6">
+        <img src="http://freefall4film.com/work-dir/devine/devine-final-sm.png" alt="" class="just img img-responsive" width="100" />
+      </div>
+      <h1 id="heading">Devine</h1>
+      <h2 id="tagline">Your Social Hub</h2>
+      <p id="jumbtext"><b id="devine-word">Devine</b> is a soon to be popular free social networking website for developers. Devine allows registered users, who hold a Github account, to import their Github profiles, post projects, send messages and keep in touch with friends and colleagues. The site, which is available in the only language that matters, includes Github profiles featuring the ability to propose collaborative projects, address technical issues through our custom chat.</p>
+    </div>
+    <% unless current_user %>
+      <a href="<%= signin_path %>" class="btn btn-default btn-lg">SIGN IN <i class="fa fa-github-alt"></i></a>
+
+    <% end %>
+  </div>
+</div>
+
 <div class="container">
 
-</div>
-<div class="jumbotron specialjum text-center">
-  <div class="over container body-content text-center">
-    <img src="http://freefall4film.com/work-dir/devine/devine-final-sm.png" alt="" class="just img img-responsive" width="100" />
-    <h1 id="heading">Devine</h1>
-    <h2 id="tagline">Your Social Hub</h2>
-    <p id="jumbtext"><b id="devine-word">Devine</b> is a soon to be popular free social networking website for developers. Devine allows registered users, who hold a Github account, to import their Github profiles, post projects, send messages and keep in touch with friends and colleagues. The site, which is available in the only language that matters, includes Github profiles featuring the ability to propose collaborative projects, address technical issues through our custom chat.</p>
-  </div>
-  <% unless current_user %>
-    <a href="<%= signin_path %>" class="btn btn-default btn-lg">SIGN IN <i class="fa fa-github-alt"></i></a>
-
-  <% end %>
-</div>
-<div class="text-center">
-    <% @projects.each do |project| %>
-      <div class="row">
-        <div class="center-block col-sm-8 project" style="float: none;">
-          <h4 class="project-name">
-            <%= "Project's Name: " + project.name %>
-          </h4>
-          <hr>
-          <p class="text-success description">
-            <%= project.description %>
-          </p class="btn btn-info">
-          <a href="<%= project_path(project) %>" class="btn btn-info">View project <%= project.name %></a>
+  <div class="text-center">
+      <% @projects.each do |project| %>
+        <div class="row">
+          <div class="center-block col-sm-8 project" style="float: none;">
+            <h4 class="project-name">
+              <%= "Project's Name: " + project.name %>
+            </h4>
+            <hr>
+            <p class="text-success description">
+              <%= project.description %>
+            </p class="btn btn-info">
+            <a href="<%= project_path(project) %>" class="btn btn-info">View project <%= project.name %></a>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+  </div>
+
 </div>

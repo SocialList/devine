@@ -14,6 +14,11 @@ class FakeGitHub < Sinatra::Base
     json_response 200, 'user.json'
   end
 
+  get '/user/:id' do
+    json_response 200, 'user_general.json'
+  end
+
+
   private
 
   def json_response(response_code, file_name)

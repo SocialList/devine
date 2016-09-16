@@ -1,38 +1,46 @@
 <div class="container">
-  <div>
-    <h3>Welcome, <%=  current_user.name %></h3>
-    <hr class="fancy-hr">
-    <img src="<%= current_user.github_profile.image %>" width="100px" style="float: left;
-    margin-right: 12px;" class="img-rounded">
-    <div style="margin-left: 120px;" class="well voxx">
-      <h4>From: <%= current_user.github_profile.location %></h4>
-      <h4>Public Repos: <%= current_user.github_profile.public_repo %></h4>
-      <h4>Public Gists: <%= current_user.github_profile.public_gists %></h4>
-      <h4>Followers: <%= current_user.github_profile.followers %></h4>
-      <h4>Following: <%= current_user.github_profile.following %></h4>
+  <div class="row">
+    <div class="col-ms-4 col-ms-offset-4">
+      <h3>Welcome, <%=  current_user.name %></h3>
+      <hr>
+      <img src="<%= current_user.github_profile.image %>" width="100px" style="float: left;
+      margin-right: 12px;" class="img-rounded">
+      <div style="margin-left: 120px;" class="well user-info">
+        <h4>From: <%= current_user.github_profile.location %></h4>
+        <h4>Public Repos: <%= current_user.github_profile.public_repo %></h4>
+        <h4>Public Gists: <%= current_user.github_profile.public_gists %></h4>
+        <h4>Followers: <%= current_user.github_profile.followers %></h4>
+        <h4>Following: <%= current_user.github_profile.following %></h4>
+      </div>
+      <hr>
     </div>
-    <hr>
   </div>
 
-  <h1 class="text-center">Your Public Repositories</h1>
-  <ul style="list-style-type: none;">
-    <% @repos.each do |repo| %>
-      <li>
-        <div class="well well-sm text-center">
-          <b class="pull-left"><a href="<%= repo[:html_url] %>" class="repo-name"><%= repo[:name] %>:</b></a>
-          <br>
-          <p class="description"><%= repo[:description] %></p>
-          <br>
-          <b>[Watchers: <%= repo[:watchers] %>, Forks: <%= repo[:forks]%>, Stargazers: <%= repo[:stargazers_count] %>]</b></p>
-          <br>
-          <form action="/projects/new">
-            <input type="hidden" name="repo_id" value="<%= repo[:id] %>">
-            <button type="submit" class="btn btn-default">Share <%= repo[:name] %></button>
-          </form>
-        </div>
+  <!-- <div class="row"> -->
+    <div class=" col-sm-8 col-sm-offset-2">
+      <h1 class="text-center">Your Public Repositories</h1>
+      <ul style="list-style-type: none;">
+        <% @repos.each do |repo| %>
+          <li>
+            <div class="well well-sm text-center">
+              <b class="pull-left"><a href="<%= repo[:html_url] %>" class="repo-name"><i class="fa fa-file-code-o" aria-hidden="true"></i> <%= repo[:name] %>:</b></a>
+              <br>
+              <p class="description"><%= repo[:description] %></p>
+              <br>
+              <b>[Watchers: <%= repo[:watchers] %>, Forks: <%= repo[:forks]%>, Stargazers: <%= repo[:stargazers_count] %>]</b></p>
+              <br>
+              <form action="/projects/new">
+                <input type="hidden" name="repo_id" value="<%= repo[:id] %>">
+                <button type="submit" class="btn btn-default btn-lg">Share <%= repo[:name] %></button>
+              </form>
+            </div>
 
-      </li>
-    <% end %>
-  </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+  <!-- </div> -->
+
 
 </div>
