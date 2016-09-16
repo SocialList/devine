@@ -5,10 +5,10 @@
       <hr>
       <img src="<%= current_user.github_profile.image %>" width="100px" style="float: left;
       margin-right: 12px;" class="img-rounded">
-      <div style="margin-left: 120px;" class="well user-info">
+      <div style="margin-left: 120px;" class="well user-info col-ms-4">
         <h4>From: <%= current_user.github_profile.location %></h4>
         <h4>Public Repos: <%= current_user.github_profile.public_repo %></h4>
-        <h4>Public Gists: <%= current_user.github_profile.public_gists %></h4>
+        <h4>Your Projects: <%= current_user.projects.count %></h4>
         <h4>Followers: <%= current_user.github_profile.followers %></h4>
         <h4>Following: <%= current_user.github_profile.following %></h4>
       </div>
@@ -16,15 +16,15 @@
     </div>
   </div>
 
-  <!-- <div class="row"> -->
+  <div class="row">
     <div class=" col-sm-8 col-sm-offset-2">
       <h1 class="text-center">Your Public Repositories</h1>
       <ul style="list-style-type: none;">
         <% @repos.each do |repo| %>
           <li>
             <div class="well well-sm text-center">
-              <b class="pull-left"><a href="<%= repo[:html_url] %>" class="repo-name"><i class="fa fa-file-code-o" aria-hidden="true"></i> <%= repo[:name] %>:</b></a>
-              <br>
+              <b class=""><a href="<%= repo[:html_url] %>" class="repo-name"><i class="fa fa-file-code-o" aria-hidden="true"></i> <%= repo[:name] %>:</b></a>
+              <hr>
               <p class="description"><%= repo[:description] %></p>
               <br>
               <b>[Watchers: <%= repo[:watchers] %>, Forks: <%= repo[:forks]%>, Stargazers: <%= repo[:stargazers_count] %>]</b></p>
@@ -40,7 +40,7 @@
       </ul>
     </div>
 
-  <!-- </div> -->
+  </div>
 
 
 </div>

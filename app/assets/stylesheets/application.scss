@@ -94,7 +94,9 @@
    background-color: #6C7A89;
    color: #000;
  }
-
+ .navbar-brand {
+   background-color: #E4F1FE;
+ }
  .navbar-brand img {
    position: relative;
     top: -5px;
@@ -149,11 +151,15 @@
  }
 
  .notifier {
+   background-color: #F5F5F5;
+   border: 0px solid #a1a1a1;
+   border-radius: 25px;
    display: inline;
    color: red !important;
    position: relative;
-    left: -16px;
+    left: -13px;
     top: 14px;
+
  }
 
  .jumbotron {
