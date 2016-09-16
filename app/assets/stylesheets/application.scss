@@ -83,12 +83,19 @@
 }
  .nav-link {
    font-family: 'Raleway', sans-serif;
+   color: white;
  }
 
  // .voxx {
  //   background-color: #6C7A89;
  //   color: #000;
  // }
+
+ .navbar-brand img {
+   position: relative;
+    top: -5px;
+    left: 5px;
+ }
 
  .navbar {
     margin-bottom: 0;
@@ -141,8 +148,8 @@
    display: inline;
    color: red !important;
    position: relative;
-    left: -30px;
-    top: 5px;
+    left: -16px;
+    top: 14px;
  }
 
  .jumbotron {
