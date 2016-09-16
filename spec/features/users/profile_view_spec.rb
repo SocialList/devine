@@ -6,11 +6,11 @@ feature 'View Profiles'do
     Project.create!(:repo_id => 11111111, :name => "new project", :description => "DELETE", :user_id => 5)
     visit '/'
     signin
-    click_link 'Devs'
+    click_link 'DEVS'
     click_link 'Bob'
     expect(page).to have_selector("ul#projects")
     click_link 'new project'
-    expect(page).to have_content('tts-datamaster-ee-crack')
+    expect(page).to have_content('new project')
     expect(page).to have_content('DELETE')
   end
 end

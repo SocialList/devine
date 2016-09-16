@@ -23,7 +23,7 @@
         <%= link_to "Delete Project", project_url(@project), method: :delete, class: "btn btn-danger btn-sm" %>
         <% end %>
         <% unless current_user == @project.user %>
-          <a href="<%= new_message_path(to: @project.user.id) %>" class="btn btn-default btn-sm">Contact Owner <i class="fa fa-paper-plane"></i></a>
+          <a href="<%= new_message_path(to: @project.user.id) %>" class="btn btn-default btn-sm" id="ContactOwner">Contact Owner <i class="fa fa-paper-plane"></i></a>
 
         <% end %>
       </div>

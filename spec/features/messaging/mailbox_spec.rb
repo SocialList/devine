@@ -12,7 +12,7 @@ feature 'Mailbox' do
       signin
     end
     scenario 'user can access his Mailbox if signed in' do
-      click_link 'Mailbox'
+      click_link 'INBOX'
       expect(page).to have_link 'Start conversation'
     end
 
@@ -30,14 +30,14 @@ feature 'Mailbox' do
 
     scenario 'user can delete a conversation' do
       send_message
-      click_link 'Mailbox'
+      click_link 'INBOX'
       click_link 'Move to trash'
       expect(page).to have_content 'The conversation was moved to trash'
     end
 
     scenario 'user can access sent messages' do
       send_message
-      click_link 'Mailbox'
+      click_link 'INBOX'
       click_link 'Sent'
       expect(page).to have_content 'Test subject'
     end
