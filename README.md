@@ -2,6 +2,20 @@
 <a href='https://coveralls.io/github/SocialList/devine?branch=master'><img src='https://coveralls.io/repos/github/SocialList/devine/badge.svg?branch=master' alt='Coverage Status' /></a>
 [![Build Status](https://travis-ci.org/SocialList/devine.svg?branch=master)](https://travis-ci.org/SocialList/devine)
 # Devine
+App that socializes [GitHub](http://github.com).
+ A place where you can find a pairing partner, challenging project and why not a new friend.
+
+Current functionality allows users to sign in using [GitHub API-v3](https://developer.github.com/v3/) and [OAuth protocol](https://developer.github.com/v3/oauth/), which supports authorization code grant type to obtain both access tokens and refresh tokens and is optimized for confidential clients.
+
+Signing in with GitHub  - allows users to use their GitHub data for creating a project on Devine. Which was implemented using a GitHub API-v3 wrapper [Octokit](http://octokit.github.io/).
+
+Each project profile can be viewed by Devine users. Can be commented and liked using [Disqus](https://disqus.com/) functionality. Which also gives additional boost to projects by showing them to a greater internet.
+
+Finding a project of your choice is just a click of a button. From project profile page users can directly mail project owner using implemented [Mailboxer](https://github.com/mailboxer/mailboxer) functionality, which is based on Social Stream engine for Ruby on Rails.
+Or user can show their interest through Disqus.
+
+Further implementation will include users map, which will make finding pair partners even easier. And will bring pairing to real locations of your choice.
+
 
 ## This application requires:
 
