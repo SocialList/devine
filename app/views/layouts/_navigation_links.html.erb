@@ -1,18 +1,16 @@
 <%# add navigation links to this file %>
 <li class='nav-item'>
-  <%= link_to 'About', page_path('about'), class: 'nav-link' %>
+  <%= link_to 'ABOUT', page_path('about'), class: 'nav-link' %>
 </li>
 <%# Add navigation after %>
 <% if current_user %>
   <li class='nav-item'>
-    <%= link_to "My Repos", "/github/index", class: 'nav-link' %>
+    <%= link_to "PROFILE", "/github/index", class: 'nav-link' %>
   </li>
   <li class='nav-item'>
-    <span>
-      <%= link_to "Mailbox", conversations_path, class: 'nav-link' %>
-    </span>
-    <span style="font-size:8; color:red; position:relative; left:50%">
-        <%= current_user.unread_inbox_count %>
-    </span>
+    <%= link_to 'INBOX', conversations_path, class: 'nav-link' %>
+  </li>
+  <li class="nav-item notifier">
+    <%= current_user.unread_inbox_count %>
   </li>
 <% end %>

@@ -19,7 +19,7 @@ feature 'Viewing individual project' do
     visit '/'
     signin
     click_link 'View project This is a long project name'
-    click_link 'Contact owner'
+    click_link 'ContactOwner'
     fill_in 'message_subject', with: 'Hi'
     fill_in 'Message', with: 'Nice'
     click_on 'Send'

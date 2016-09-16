@@ -28,15 +28,15 @@ module Omniauth
   module SessionHelpers
     def signin
       visit root_path
-      expect(page).to have_content('Sign in')
+      expect(page).to have_content('GITHUB LOGIN')
       auth_mock
-      click_link 'Sign in'
-      expect(page).to have_content('Welcome, natasha')
+      click_link 'GITHUB LOGIN'
+      expect(page).to have_content('natasha')
     end
 
     def make_project
       signin
-      click_link 'My Repos'
+      click_link 'PROFILE'
       expect(page).to have_button "Share .atom"
       click_button 'Share .atom'
       expect(page.current_path).to eq "/projects/new"
@@ -48,7 +48,7 @@ module Omniauth
 
   module MessagingHelpers
     def send_message
-      click_link 'Mailbox'
+      click_link 'INBOX'
       click_link 'Start conversation'
       fill_in 'Subject', with: 'Test subject'
       fill_in 'Message', with: 'Test message'

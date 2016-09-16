@@ -1,0 +1,190 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+ @import 'chosen';
+ @import 'https://fonts.googleapis.com/css?family=Baloo|Lobster|Open+Sans+Condensed:300|Oswald|Raleway|Yanone+Kaffeesatz';
+
+ // font-family: 'Open Sans Condensed', sans-serif;
+ // font-family: 'Oswald', sans-serif;
+ // font-family: 'Raleway', sans-serif;
+ // font-family: 'Baloo', cursive; # main text
+ // font-family: 'Lobster', cursive;
+ // font-family: 'Yanone Kaffeesatz', sans-serif;
+ body {
+   background-color: #fafafa;
+  //  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
+   font-size: 22px;
+ }
+
+#heading {
+  font-family: 'Baloo', cursive;
+}
+
+#tagline {
+  color: #4f4f4f;
+}
+
+#jumbtext {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+#devine-word {
+  font-family: 'Baloo', cursive;
+}
+
+.about {
+  font-family: 'Baloo', cursive;
+}
+ .messages {
+   max-height: 400px;
+   overflow-y: auto;
+   margin-bottom: 1em;
+   margin-top: 1em;
+ }
+
+ .navi-text {
+   float: right;
+   margin-right: 12px;
+   margin-top: 5px;
+   font-family: 'Oswald', sans-serif;
+   color: #fff;
+   font-size: 15px;
+ }
+
+ .usr-img {
+   width: 30px;
+   float: right;
+   margin-right: 12px;
+ }
+
+ .ident {
+   position: absolute;
+    right: 50px;
+    top: 10px;
+ }
+
+.specialjum {
+  position:relative;
+    top: -30px;
+
+  width: 100%;
+}
+ .nav-link {
+   font-family: 'Raleway', sans-serif;
+   color: white;
+ }
+
+ .user-info {
+   background-color: #6C7A89;
+   color: #000;
+ }
+ .navbar-brand {
+   background-color: #E4F1FE;
+   padding-right: 25px;
+ }
+ .navbar-brand img {
+   position: relative;
+    top: -5px;
+    left: 5px;
+ }
+
+ .navbar {
+    margin-bottom: 0;
+    background-color: #16a085;
+    z-index: 9999;
+    border: 0;
+    font-size: 15px !important;
+    // line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    height: 45px;
+}
+// .navbar li a, .navbar .navbar-brand {
+//     color: #fff !important;
+//     height: 45px;
+// }
+//
+// .navbar-nav li a:hover, .navbar-nav li.active a {
+//     color: #f4511e !important;
+//     background-color: #fff !important;
+// }
+
+// .navbar-default .navbar-toggle {
+//     border-color: transparent;
+//     color: #fff !important;
+// }
+
+
+ .nav-logo {
+   height: 30px;
+ }
+ .gray-hr {
+   color: gray;
+   background-color: gray;
+ }
+ .project-name {
+   font-family: 'Yanone Kaffeesatz', sans-serif;
+   font-size: 25px;
+ }
+
+ .description {
+   font-weight: bold;
+   padding: 5px 0px 20px 0px;
+   line-height: 18px;
+   font-size: 15px;
+
+ }
+ .project-container {
+   position: relative;
+   top: -30px;
+ }
+ .project {
+   background-color: #E4F1FE;
+   border: 1px solid white;
+   border-radius: 25px;
+   padding: 20px;
+   margin-bottom: 8px;
+ }
+
+
+ .notifier {
+   font-weight: bold;
+   display: inline;
+   color: red !important;
+   position: relative;
+    left: -13px;
+    top: 14px;
+
+ }
+
+ .jumbotron {
+     background-color: #F5F5F5;
+     color: gray;
+ }
+
+.repo-name {
+  font-size: 30px;
+  text-decoration: none;
+
+}
+
+
+.stronger {
+  font-size: 22px;
+}

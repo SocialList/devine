@@ -1,28 +1,45 @@
+<div class="row">
+  <div class="jumbotron specialjum text-center">
+    <div class="over container body-content text-center">
+      <div class="row">
+        <div class=" col-ms-4 col-ms-offset-6">
+          <img src="http://freefall4film.com/work-dir/devine/devine-final-sm.png" alt="" class="" width="100" />
+        </div>
+      </div>
 
-<% if current_user %>
-  <div><h3>Welcome, <%=  current_user.name %></h3></div>
-  <img src="<%= current_user.github_profile.image %>" width="100px" style="float: left;
-  margin-right: 12px;">
-  <div style="margin-left: 120px;">
-    <h4>From: <%= current_user.github_profile.location %></h4>
-    <h4>Public Repos: <%= current_user.github_profile.public_repo %></h4>
-    <h4>Public Gists: <%= current_user.github_profile.public_gists %></h4>
-    <h4>Followers: <%= current_user.github_profile.followers %></h4>
-    <h4>Following: <%= current_user.github_profile.following %></h4>
-  </div>
-<% else %>
- <h1>Welcome, please login.</h1>
-<% end %>
-
-<div class="">
-  <% @projects.each do |project| %>
-    <div class="well">
-      <%= "Project's Name: " + project.name %>
-
-      <p>
-        <%= project.description %>
-      </p>
-      <%= link_to "View project #{project.name}", project_path(project) %>
+      <h1 id="heading">Devine</h1>
+      <h2 id="tagline">Your Social Hub</h2>
+      <p id="jumbtext"><b id="devine-word">Devine</b> is a soon to be popular free social networking website for developers. Devine allows registered users, who hold a Github account, to import their Github profiles, post projects, send messages and keep in touch with friends and colleagues. The site, which is available in the only language that matters, includes Github profiles featuring the ability to propose collaborative projects, address technical issues through our custom chat.</p>
     </div>
-  <% end %>
+    <% unless current_user %>
+      <a href="<%= signin_path %>" class="btn btn-default btn-lg">SIGN IN <i class="fa fa-github-alt"></i></a>
+
+    <% end %>
+  </div>
+</div>
+
+<div class="container project-container">
+
+  <div class="text-center">
+      <% @projects.each do |project| %>
+        <div class="row">
+          <div class="center-block col-sm-8 project" style="float: none;">
+            <h4 class="project-name">
+              <%= "Project's Name: " + project.name %>
+            </h4>
+            <i class="fa fa-arrows-h text-muted" aria-hidden="true"></i>
+
+            <div class="panel panel-default">
+              <p class="text-muted description panel-body">
+                <%= project.description %>
+              </p class="btn btn-info">
+            </div>
+
+
+            <a href="<%= project_path(project) %>" class="btn btn-info">View project <%= project.name %></a>
+          </div>
+        </div>
+      <% end %>
+  </div>
+
 </div>

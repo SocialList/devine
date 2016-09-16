@@ -1,9 +1,18 @@
-<h3>User</h3>
-<p>Name: <%= @user.name if @user.name %></p>
-<p>
-  <ul id='projects'>
-    <% @user.projects.each do |project|%>
-    <li>  <%= link_to "#{project.name}", project_path(project)  %></li>
-    <% end %>
-  </ul>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-ms-6 col-ms-offset-4 well-sm">
+      <h3>User</h3>
+      <p>Name: <%= @user.name if @user.name %></p>
+      <p>
+        <ul id='projects'>
+          <% @user.projects.each do |project|%>
+          <li>  <%= link_to "#{project.name}", project_path(project)  %></li>
+          <% end %>
+        </ul>
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
