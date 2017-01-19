@@ -3,6 +3,12 @@
 [![Build Status](https://travis-ci.org/SocialList/devine.svg?branch=master)](https://travis-ci.org/SocialList/devine)
 # Devine
 
+## You can try our app here:
+
+https://devine-github.herokuapp.com
+
+Or you can fork and implement your own features by following the steps below...
+
 ## This application requires:
 
 - Ruby 2.3.1
